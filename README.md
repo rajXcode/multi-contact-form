@@ -12,3 +12,23 @@ The web form will have name, email and phone number of the contact. The user sho
    Validate: This button should trigger JavaScript validation for all input elements. Validation errors should be displayed under each input element. 
    Remove: This button should remove selected set of contact form from web page and the text file which has been saved. 
    Save: This button should submit the forms on the page to server side so PHP can handle form validation and save into the text file. 
+
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+ - IntelliJ IDEA 2019+
+ - JDK 1.8
+
+1. Install MySQL on your machine. You can configure the user and password in application.properties file as per your MySQL credentials.
+2. Create filesystem schema on port 3306.
+3. Clone or download the repository on your local environment and import the project in IntelliJ IDEA and build the project.
+
+## Running the project from IntelliJ IDEA
+Right click on the MultiContactFormApplication.java file and click on Run 'MultiContactFormApplication' and see if all is well and server goes up. I have taken the port number as 8082 because 8080 is by default. You can set your desired port in application.properties file.
+
+## License
+This project is licensed under the GNU GENERAL PUBLIC LICENSE-Version 3 - see the [LICENSE.md](LICENSE.md) file for details
+
+## Authors
+* **Rajender Singh Chauhan**
