@@ -1,0 +1,66 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Multi Contact Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link th:href="@{/index.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/index.js}"></script>
+</head>
+<body>
+<div align="center" class="container">
+    <h2>Multi Contact Form</h2>
+    <div class="row">
+        <div class="col-6">
+            <h2>Add Contact</h2>
+            <form th:action="@{/save-contact}" th:object="${contact}" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" th:field="*{name}">
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" th:field="*{email}">
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                </div>
+                <div class="form-group">
+                    <label for="number">Phone Number:</label>
+                    <input type="text" class="form-control" id="number" th:field="*{number}" maxlength="10">
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('number')}" th:errors="*{number}"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+            <button type="submit" th:onclick="validateForm()" class="btn btn-primary">Validate</button>
+        </div>
+        <div class="col-6">
+            <h2>Remove Contact</h2>
+            <form th:action="@{/remove-contact}" th:object="${contact}" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" th:field="*{name}">
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" th:field="*{email}">
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+                </div>
+                <div class="form-group">
+                    <label for="number">Phone Number:</label>
+                    <input type="text" class="form-control" th:field="*{number}" maxlength="10">
+                    <p class="alert alert-danger" th:if="${#fields.hasErrors('number')}" th:errors="*{number}"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
